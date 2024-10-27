@@ -1,17 +1,13 @@
 module main
 
-import os
+import khanhdz.model
+import khanhdz.animal
+import khanhdz
 
 fn main() {
-	println('Hello World!')
+	khanhdz.concac()
 
-	println(os.args)
+	model.human_gay_oo()
 
-	a, b := buoi()
-
-	println('a: ${a}, b: ${b}')
-}
-
-fn buoi() (int, int) {
-	return 10, 20
+	animal.dog_sua_gau_gau()
 }
