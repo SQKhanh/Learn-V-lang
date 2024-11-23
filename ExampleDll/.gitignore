@@ -6,6 +6,7 @@ ExampleDll
 *.so
 *.dylib
 *.dll
+*.rar
 
 # Ignore binary output folders
 bin/
