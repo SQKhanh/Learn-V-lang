@@ -2,6 +2,8 @@ module main
 
 import dl.loader
 
+#include <stdio.h>
+
 type DLLFunc = fn ()
 
 fn call_v_dll() {
@@ -53,4 +55,6 @@ fn call_c_dll() {
 fn main() {
 	call_v_dll()
 	call_c_dll()
+
+	C.printf(c'ni hao maaaaa')
 }
