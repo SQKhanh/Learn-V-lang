@@ -5,6 +5,7 @@ import dl.loader
 #include <stdio.h>
 
 type DLLFunc = fn ()
+type DLLFunc_Int = fn (int)
 
 fn call_v_dll() {
 	mut dl_loader := loader.get_or_create_dynamic_lib_loader(
@@ -50,6 +51,25 @@ fn call_c_dll() {
 	f_hello_world := DLLFunc(dll_func)
 
 	f_hello_world()
+
+	dll_func2 := dl_loader.get_sym('hello_world_from_cButCamelCase') or {
+		println('ERROR load function hello_world_from_cButCamelCase: ${err}')
+		return
+	}
+
+	f_hello_world2 := DLLFunc(dll_func2)
+
+	f_hello_world2()
+
+
+	dll_func3 := dl_loader.get_sym('printAge') or {
+		println('ERROR load function printAge: ${err}')
+		return
+	}
+
+	f_hello_world3 := DLLFunc_Int(dll_func3)
+
+	f_hello_world3(18)
 }
 
 fn main() {

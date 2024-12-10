@@ -9,4 +9,14 @@ extern "C"
     {
         std::cout << "Hello from C++ DLL!" << std::endl;
     }
+
+    __declspec(dllexport) void hello_world_from_cButCamelCase()
+    {
+        std::cout << "Hello from C++ DLL! but camelCase" << std::endl;
+    }
+
+    __declspec(dllexport) void printAge(int age)
+    {
+        std::cout << "Hello from C++ DLL! age: " << age << std::endl;
+    }
 }
