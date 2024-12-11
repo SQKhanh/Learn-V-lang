@@ -1,0 +1,23 @@
+# Binaries for programs and plugins
+main
+EmbedLua
+*.exe
+*.exe~
+*.so
+*.dylib
+
+# Ignore binary output folders
+bin/
+
+# Ignore common editor/system specific metadata
+.DS_Store
+.idea/
+.vscode/
+*.iml
+
+# ENV
+.env
+
+# vweb and database
+*.db
+*.js
